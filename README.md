@@ -28,6 +28,8 @@ Ensemble, je vous propose de découvrir les notions suivantes :
 - [Mise en place d'une solution de supervision (Zabbix avec Grafana)]()
 - [Déploiement automatique de VM (Ansible et Terraform)]()
 - [Mise en place de Jellyfin]()
+- [Mise en place d'un service de ticketing]()
+- [Ajout d'un serveur Web]()
 - [Mise en place d'un serveur Jellyfin (visionnage de films)]()
 - [Création et montage d'un AD de A à Z]()
 - [Intégration des comptes utilisateurs de l’Active Directory sur Proxmox via LDAP]()
