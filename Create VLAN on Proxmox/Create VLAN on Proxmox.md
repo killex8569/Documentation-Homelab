@@ -87,7 +87,57 @@ Une fois les modifications appliquées, votre **zone SDN** ainsi que vos **VLANs
 
 # Partie 2 : Configuration sur le switch
 
+## Introduction 
+Si votre serveur Proxmox est **directement connecté à votre pare-feu ou à votre box Internet**, sans passer par un **switch manageable**, cette partie ne vous concerne pas. Par exemple, dans mon cas, mon serveur est relié directement à mon switch netgear qui est lui même relier à un pare-feu sous **OPNsense**, mais la même approche est valable pour d’autres solutions comme **pfSense**, **Stormshield**, ou encore des appliances de type **Firebox WatchGuard**, etc.
+
+Dans ce type de configuration, vous pouvez **passer directement à la partie 3** de la documentation.
+
 ## Déclaration des VLAN sur le switch
+Pour commencer, nous allons accéder à l’interface de configuration des **VLANs** sur le switch. Les étapes décrites ici peuvent légèrement varier selon le modèle ou la marque de votre switch, mais les concepts restent similaires pour la majorité des équipements VLAN-aware. Dans mon cas, je me rends dans le menu :  
+`Switching → VLAN`, puis je sélectionne le **mode "Advanced 802.1Q VLAN"**.
+
+Ce mode est particulièrement utile pour nos manipulations car il permet :
+
+- La gestion avancée des VLANs.
+
+- Le changement du **VLAN de management** (si pris en charge).
+
+- L’accès à la table **PVID (Port VLAN ID)**, essentielle pour l’attribution des VLANs aux ports physiques du switch.
+
+```{=latex}
+\begin{center}
+\includegraphics[width=0.7\linewidth]{data/switch.png}
+
+\vspace{0.2cm}
+\textit{Figure X - Choix du type de VLAN}
+\end{center}
+```
+
+Une fois sur l’interface de configuration VLAN de votre switch, cliquez sur **"Add VLAN"** (ou équivalent selon le fabricant).
+
+Renseignez ensuite :
+
+- Un **nom explicite** pour le VLAN (ex. : `VLAN67`)
+
+- Le **même tag VLAN** que celui défini dans le SDN de Proxmox (dans notre exemple, **67**)
+
+Il est impératif que le **VLAN ID (tag)** soit identique entre votre switch, Proxmox et les autres équipements du réseau pour assurer une bonne cohérence de la segmentation réseau.
+
+
+```{=latex}
+\begin{center}
+\includegraphics[width=0.7\linewidth]{data/switch2.png}
+
+\vspace{0.2cm}
+\textit{Figure X - Ajout d'une VLAN}
+\end{center}
+```
+
+> **Information réseau**
+
+Dans mon cas, j’ai appliqué un **tag VLAN** sur les ports **1 à 5** du switch. Les trois derniers ports ne sont **pas tagués**, car ils sont utilisés à d’autres fins dans mon infrastructure. Cependant, si vous le souhaitez, vous pouvez également **taguer ces ports** afin qu’ils soient capables de **transporter le trafic associé à ce VLAN** (par exemple pour une configuration en mode **trunk**).
+
+> **Rappel** : Un port **tagué** accepte le trafic de plusieurs VLANs (mode trunk), tandis qu’un port **non tagué** (ou configuré avec un PVID) est généralement utilisé pour un seul VLAN (mode access).
 
 
 
