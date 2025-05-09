@@ -251,14 +251,6 @@ Il faut activer le service DHCP sur cette interface, puis définir une plage d�
 Il est également nécessaire de définir l’adresse IP de l’interface VLAN 67 (soit `172.16.67.100`) comme serveur DNS et passerelle par défaut.
 
 
-## Ajout de règle de parefeu adéquats
-
-
-
-# Test et améliorations
-
-
-
 # Conclusion
 
 ### info
