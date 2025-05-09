@@ -3,6 +3,21 @@ Dans cette documentation, nous allons explorer les fonctionnalités offertes par
 
 Nous aborderons également l’intégration des VLANs dans OPNsense, permettant la mise en place de règles de filtrage spécifiques à chaque VLAN. Cela vous permettra de segmenter efficacement votre réseau et de contrôler les flux inter-VLAN selon des politiques de sécurité adaptées.
 
+### Objectifs
+
+### Objectifs atteints à la fin de ce tutoriel :
+
+Vous serez capable de :
+
+- Créer une VLAN sur Proxmox  
+- Créer une VLAN via le SDN et lui attribuer un tag  
+- Ajouter la VLAN sur un switch  
+- Ajouter la VLAN sur OPNsense  
+- Ajouter et configurer cette nouvelle interface  
+- Intégrer des services externes tels qu’un serveur DHCP
+
+
+
 # Partie 1 : Proxmox
 
 ## Introduction
@@ -144,12 +159,97 @@ Dans mon cas, j’ai appliqué un **tag VLAN** sur les ports **1 à 5** du switc
 # Partie 3 : Intégration sur Opnsense
 
 ## Intégration des VLAN
+Sur OPNsense, vous devrez vous rendre dans **"Interface → Périphérique → VLAN"**.
 
-## Ajout des interfaces
 
-## Mise en fonctionnement des interfaces
+```{=latex}
+\begin{center}
+\includegraphics[width=0.7\linewidth]{data/vlan_opnsense.png}
+
+\vspace{0.2cm}
+\textit{Figure X - Liste des VLAN sur Opnsense}
+\end{center}
+```
+
+Une fois dans cet onglet, vous pourrez ajouter un VLAN en cliquant sur **"+"**. 
+
+```{=latex}
+\begin{center}
+\includegraphics[width=0.7\linewidth]{data/add_vlan.png}
+
+\vspace{0.2cm}
+\textit{Figure X - Ajout des VLAN sur Opnsense}
+\end{center}
+```
+
+Une fois sur l'interface, vous pourrez remplir les éléments suivants :
+
+- **Dispositif** : vlan0.67
+- **Parent** : sélectionnez votre interface LAN (réseau interne où se situe votre serveur)
+- **Tag du VLAN** : 67
+- **Priorité** : laissez par défaut
+- **Description** : VLAN 67 - TUTO
+
+Cliquez ensuite sur **Appliquer** une fois le VLAN créé. Votre VLAN est désormais intégré à votre pare-feu, mais il n’est pas encore disponible dans les règles du firewall !
+
+Une fois que votre VLAN a été créé, vous pourrez vous rendre dans l’onglet suivant : **Interface → Assignations**.
+
+```{=latex}
+\begin{center}
+\includegraphics[width=0.7\linewidth]{data/assignations.png}
+
+\vspace{0.2cm}
+\textit{Figure X - Ajout des VLAN en tant qu'interface}
+\end{center}
+```
+Une fois ajouté, votre VLAN sera considéré comme une interface indépendante.
+
+```{=latex}
+\begin{center}
+\includegraphics[width=0.7\linewidth]{data/interface_vlan.png}
+
+\vspace{0.2cm}
+\textit{Figure X - Configuration de l'interface VLAN67}
+\end{center}
+```
+
+
+Ensuite, attribuez une adresse IP à l’interface.  
+**ATTENTION** : cette adresse IP sera utilisée comme **passerelle (gateway) de votre VLAN**.
+
+> *À titre d’exemple : pour une VLAN de test, j’utilise l’adresse `.100` comme passerelle,  
+> et je commencerai la plage DHCP à partir de `.110`. Les adresses intermédiaires seront réservées aux machines à IP statique.*
+
+
+```{=latex}
+\begin{center}
+\includegraphics[width=0.7\linewidth]{data/gateway.png}
+
+\vspace{0.2cm}
+\textit{Figure X - Ajout d'une ip pour l'interface VLAN}
+\end{center}
+```
+
+Une fois cela fait, nous pourrons configurer le service DHCP d’OPNsense afin qu’il attribue automatiquement les adresses IP. Si vous préférez utiliser votre Active Directory (AD) ou un autre serveur dédié, cela reste possible, mais nécessitera des manipulations supplémentaires. Dans ce guide, nous nous concentrerons sur la mise en place d’une solution durable et stable via le pare-feu.
 
 ## Mise en place du DHCP
+
+Dans cette partie, nous allons voir comment activer les services DHCP pour cette VLAN. Vous devrez vous rendre dans l’onglet **Services → DHCPv4 → VLAN67**.
+
+
+
+```{=latex}
+\begin{center}
+\includegraphics[width=0.7\linewidth]{data/dhcp.png}
+
+\vspace{0.2cm}
+\textit{Figure X - Ajout d'un DHCP sur l'interface VLAN67'}
+\end{center}
+```
+
+Il faut activer le service DHCP sur cette interface, puis définir une plage d’adresses IP à distribuer (vous pouvez en choisir une autre, mais dans cet exemple, nous utiliserons celle-ci).  
+Il est également nécessaire de définir l’adresse IP de l’interface VLAN 67 (soit `172.16.67.100`) comme serveur DNS et passerelle par défaut.
+
 
 ## Ajout de règle de parefeu adéquats
 
@@ -165,4 +265,4 @@ Dans mon cas, j’ai appliqué un **tag VLAN** sur les ports **1 à 5** du switc
 
 Document généré et créer en markdown retrouvable [ici]()
 
-Commande de création : `pandoc page\ de\ garde.md sommaire.md introduction.md contenue.md conclusion.md -o Creer_un_VLAN_avec_le_SDN_sur_proxmox.pdf --pdf-engine=xelatex -V lang=fr`
+Commande de création : `pandoc Page\ de\ garde.md Sommaire.md Create\ VLAN\ on\ Proxmox.md -o Creer_un_VLAN_avec_le_SDN_sur_proxmox.pdf --pdf-engine=xelatex -V lang=fr`
