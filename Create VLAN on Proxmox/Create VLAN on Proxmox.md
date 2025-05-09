@@ -43,7 +43,7 @@ Pour commencer à créer un VLAN, rendez-vous sur **l’interface web de Proxmox
 \includegraphics[width=0.7\linewidth]{data/sdn_vlan.png}
 
 \vspace{0.2cm}
-\textit{Figure X - Création d'une zone de type VLAN}
+\textit{Figure 1 - Création d'une zone de type VLAN}
 \end{center}
 ```
 
@@ -52,7 +52,7 @@ Pour commencer à créer un VLAN, rendez-vous sur **l’interface web de Proxmox
 \includegraphics[width=0.7\linewidth]{data/create_vlan.png}
 
 \vspace{0.2cm}
-\textit{Figure X - Information  de création d'une zone VLAN}
+\textit{Figure 2 - Information  de création d'une zone VLAN}
 \end{center}
 ```
 
@@ -66,7 +66,7 @@ Vous pouvez maintenant valider la création du VNet.
 \includegraphics[width=0.7\linewidth]{data/vlan.png}
 
 \vspace{0.2cm}
-\textit{Figure X - Création d'une première VLAN}
+\textit{Figure 3 - Création d'une première VLAN}
 \end{center}
 ```
 
@@ -78,7 +78,7 @@ Une fois le VNet créé, vous disposez désormais de votre premier VLAN configur
 \includegraphics[width=0.7\linewidth]{data/apply.png}
 
 \vspace{0.2cm}
-\textit{Figure X - Appliquer les changements pour intégrer les VLAN}
+\textit{Figure 4 - Appliquer les changements pour intégrer les VLAN}
 \end{center}
 ```
 
@@ -88,7 +88,7 @@ Une fois le VNet créé, vous disposez désormais de votre premier VLAN configur
 \includegraphics[width=0.7\linewidth]{data/available.png}
 
 \vspace{0.2cm}
-\textit{Figure X - Disponibilité des VLAN}
+\textit{Figure 5 - Disponibilité des VLAN}
 \end{center}
 ```
 
@@ -124,7 +124,7 @@ Ce mode est particulièrement utile pour nos manipulations car il permet :
 \includegraphics[width=0.7\linewidth]{data/switch.png}
 
 \vspace{0.2cm}
-\textit{Figure X - Choix du type de VLAN}
+\textit{Figure 6 - Choix du type de VLAN}
 \end{center}
 ```
 
@@ -144,7 +144,7 @@ Il est impératif que le **VLAN ID (tag)** soit identique entre votre switch, Pr
 \includegraphics[width=0.7\linewidth]{data/switch2.png}
 
 \vspace{0.2cm}
-\textit{Figure X - Ajout d'une VLAN}
+\textit{Figure 7 - Ajout d'une VLAN}
 \end{center}
 ```
 
@@ -167,7 +167,7 @@ Sur OPNsense, vous devrez vous rendre dans **"Interface → Périphérique → V
 \includegraphics[width=0.7\linewidth]{data/vlan_opnsense.png}
 
 \vspace{0.2cm}
-\textit{Figure X - Liste des VLAN sur Opnsense}
+\textit{Figure 8 - Liste des VLAN sur Opnsense}
 \end{center}
 ```
 
@@ -178,7 +178,7 @@ Une fois dans cet onglet, vous pourrez ajouter un VLAN en cliquant sur **"+"**.
 \includegraphics[width=0.7\linewidth]{data/add_vlan.png}
 
 \vspace{0.2cm}
-\textit{Figure X - Ajout des VLAN sur Opnsense}
+\textit{Figure 9 - Ajout des VLAN sur Opnsense}
 \end{center}
 ```
 
@@ -199,7 +199,7 @@ Une fois que votre VLAN a été créé, vous pourrez vous rendre dans l’onglet
 \includegraphics[width=0.7\linewidth]{data/assignations.png}
 
 \vspace{0.2cm}
-\textit{Figure X - Ajout des VLAN en tant qu'interface}
+\textit{Figure 10 - Ajout des VLAN en tant qu'interface}
 \end{center}
 ```
 Une fois ajouté, votre VLAN sera considéré comme une interface indépendante.
@@ -209,7 +209,7 @@ Une fois ajouté, votre VLAN sera considéré comme une interface indépendante.
 \includegraphics[width=0.7\linewidth]{data/interface_vlan.png}
 
 \vspace{0.2cm}
-\textit{Figure X - Configuration de l'interface VLAN67}
+\textit{Figure 11 - Configuration de l'interface VLAN67}
 \end{center}
 ```
 
@@ -226,7 +226,7 @@ Ensuite, attribuez une adresse IP à l’interface.
 \includegraphics[width=0.7\linewidth]{data/gateway.png}
 
 \vspace{0.2cm}
-\textit{Figure X - Ajout d'une ip pour l'interface VLAN}
+\textit{Figure 12 - Ajout d'une ip pour l'interface VLAN}
 \end{center}
 ```
 
@@ -240,10 +240,10 @@ Dans cette partie, nous allons voir comment activer les services DHCP pour cette
 
 ```{=latex}
 \begin{center}
-\includegraphics[width=0.7\linewidth]{data/dhcp.png}
+\includegraphics[width=0.9\linewidth]{data/dhcp.png}
 
 \vspace{0.2cm}
-\textit{Figure X - Ajout d'un DHCP sur l'interface VLAN67'}
+\textit{Figure 13 - Ajout d'un DHCP sur l'interface VLAN67'}
 \end{center}
 ```
 
