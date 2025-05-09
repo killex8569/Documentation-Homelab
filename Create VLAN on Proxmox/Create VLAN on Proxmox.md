@@ -255,6 +255,6 @@ Il est également nécessaire de définir l’adresse IP de l’interface VLAN 6
 
 ### info
 
-Document généré et créer en markdown retrouvable [ici]()
+Document généré et créer en markdown retrouvable [ici](https://github.com/killex8569/Documentation-Homelab/tree/main/Create%20VLAN%20on%20Proxmox)
 
 Commande de création : `pandoc Page\ de\ garde.md Sommaire.md Create\ VLAN\ on\ Proxmox.md -o Creer_un_VLAN_avec_le_SDN_sur_proxmox.pdf --pdf-engine=xelatex -V lang=fr`
