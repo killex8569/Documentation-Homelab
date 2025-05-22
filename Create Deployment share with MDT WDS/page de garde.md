@@ -19,9 +19,9 @@ header-includes:
     \includegraphics[width=0.5\textwidth]{PdG.png}
     \vspace*{0.2cm}
 
-    {\Huge\textbf{Cours CEJM BTS 2025 }\par}
+    {\Huge\textbf{Documentation Déploiement WDS MDT}\par}
     \vspace{0.5cm}
-    {\LARGE Documentation/Cours\par}
+    {\LARGE Documentation PPE\par}
 
     \includegraphics[width=0.5\textwidth]{PdG2.png}
     \vspace*{0.2cm}
@@ -30,9 +30,9 @@ header-includes:
 
     \vfill
 
-    {\large\textbf{Alexandre FAUBLADIER--ANETTE}\par}
+    {\large\textbf{Alexandre FAUBLADIER--ANETTE; }\par}
     \vspace{0.2cm}
     {\large Institution des Chartreux\par}
     \vspace{0.2cm}
-    {\large 18/05/2025\par}
+    {\large 22/05/2025\par}
 \end{titlepage}

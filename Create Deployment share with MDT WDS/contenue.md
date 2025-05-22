@@ -13,7 +13,7 @@ Pour pouvoirs installer notre solutions, nous allons avoirs besoin du matériels
 - Une machine Virtuelle virger nous permettant de véirifer le fonctionnement de PXE et du déploiement via le réseau
 
 
-## Mise en place du serveur DHCP
+## Mise en place et configuration du serveur DHCP
 
 Sur notre serveur DHCP présent sur notre AD, nous avons du faire certaines modification, notamment au niveau des options du DHCP. Dans un premier temps nous l'avons installer de manière classique avec les autres services nécéssaires (sur l'image ci-dessous ne figure pas l'installation du rôle ADDS car nous l'avons implémenter lors de l'installation préalable de Hello-my-dir et HardenAD).
 
@@ -22,12 +22,25 @@ Nous allons pouvoirs nous rendre dans "Géré --> Ajout de rôle et de fonctionn
 
 ```{=latex}
 \begin{center}
-\includegraphics[width=0.9\linewidth]{data/}
+\includegraphics[width=0.9\linewidth]{data/dhcp_dns.png}
 
 \vspace{0.2cm}
-\textit{Figure X - Installation des services sur l'AD}
+\textit{Figure X - Installation des services DNS et DHCP sur l'AD}
 \end{center}
 ```
+
+```{=latex}
+\begin{center}
+\includegraphics[width=0.9\linewidth]{data/dhcp_dns_2.png}
+
+\vspace{0.2cm}
+\textit{Figure X - Intégration et redémarrage de la machine}
+\end{center}
+```
+
+Une fois installer, nous pouvons redémarrer la machine et enfin commencer la configuration du DHCP. Dans un premier temps nous allons nous rendre dans l'interface de
+
+
 
 # Mise en place d'application déployer avec l'OS
 
