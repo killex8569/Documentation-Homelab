@@ -80,6 +80,19 @@ Très bien une fois que tout les pré-requis on été réunni, nous allons pouvo
 \end{center}
 ```
 
+Une fois cela fait, nous allons pouvoirs créer les utilisateurs qui nous permetterons de pouvoirs nous connecter au VPN. Pour cela rendez vous dans **"System --> Access --> Users"**, une fois cela fait **créer votre user et revenez sur la page affichant la liste de utilisateurs et cliquez sur le bouton "certificat"**.  
+
+
+```{=latex}
+\begin{center}
+\includegraphics[width=0.9\linewidth]{data/users.png}
+
+\vspace{0.2cm}
+\textit{Figure X - Ajout d'un utilisateur pour la connexion VPN}
+\end{center}
+```
+
+
 
 # Conclusion
 
