@@ -237,7 +237,6 @@ Une fois cela fait, nous pourrons configurer le service DHCP d’OPNsense afin q
 Dans cette partie, nous allons voir comment activer les services DHCP pour cette VLAN. Vous devrez vous rendre dans l’onglet **Services → DHCPv4 → VLAN67**.
 
 
-
 ```{=latex}
 \begin{center}
 \includegraphics[width=0.9\linewidth]{data/dhcp.png}

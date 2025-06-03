@@ -92,7 +92,37 @@ Une fois cela fait, nous allons pouvoirs créer les utilisateurs qui nous permet
 \end{center}
 ```
 
+Une fois sur la page pour ajouter le certificats à l'utilisateur, créer un nouveau certificat et renseigner uniquement le certifcat
 
+```{=latex}
+\begin{center}
+\includegraphics[width=0.9\linewidth]{data/users_2.png}
+
+\vspace{0.2cm}
+\textit{Figure X - Création d'un Certificats utilisateurs}
+\end{center}
+```
+
+une fois sur l'interface remplisser de la manière suivante les éléments suivants : 
+
+```{=latex}
+\begin{center}
+\includegraphics[width=0.9\linewidth]{data/certificat_user.png}
+
+\vspace{0.2cm}
+\textit{Figure X - Ajout d'un utilisateur pour la connexion VPN}
+\end{center}
+```
+
+Une fois le certificats terminer, nous allons pouvoirs faire en sorte de l'exporter, pour ce faire, nous allons nous rendre dans la catégorie suivante : **"VPN --> OpenVPN --> Exporter le client"**
+
+Une fois cela fait, séléctionner votre serveur recement créer (dans mon cas TUUTO) et renseigner les éléments suivants : 
+
+- Type d'exportation : (fichier uniquement)
+- Nom d'hôte : Votre ip publique
+- port : Votre port renseigner
+
+Puis tout en bas séléctionner votre utilisateur et cliquez sur télécharger.
 
 # Conclusion
 
