@@ -40,3 +40,5 @@ Ensemble, je vous propose de découvrir les notions suivantes :
 - [Création de VLAN via SDN de Proxmox]()
 - [Créer de la documentation en Markdown]()
 - [Mise en place d'un système de sauvegarde automatique (Backup) sous Proxmox]()
+- [Automatisation et contrôle de son chez soi avec HomeAssistant liée avec Zigbee]()
+- [Mise en place d'un serveur minecraft]()
