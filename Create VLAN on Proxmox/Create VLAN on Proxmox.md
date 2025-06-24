@@ -270,6 +270,10 @@ Il est également nécessaire de définir l’adresse IP de l’interface VLAN 6
 
 ### info
 
+Nous avons donc vu comment mettre en place des VLAN sur : Proxmox, un switch Netgear, ainsi qu’un pare-feu OPNsense.
+Vous êtes désormais en mesure de créer et de gérer des VLAN au sein de votre infrastructure. N’hésitez pas à consulter les tutoriels disponibles aux adresses ci-dessous (réalisés par mes soins).
+
 Document généré et créer en markdown retrouvable [ici](https://github.com/killex8569/Documentation-Homelab/tree/main/Create%20VLAN%20on%20Proxmox)
+
 
 Commande de création : `pandoc Page\ de\ garde.md Sommaire.md Create\ VLAN\ on\ Proxmox.md -o Creer_un_VLAN_avec_le_SDN_sur_proxmox.pdf --pdf-engine=xelatex -V lang=fr`
