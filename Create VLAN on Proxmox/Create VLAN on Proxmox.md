@@ -17,6 +17,21 @@ Vous serez capable de :
 - Intégrer des services externes tels qu’un serveur DHCP
 
 
+### Les étapes (version rapide)
+
+1. Ajouter une nouvelle zone SDN (type VLAN)
+2. Ajouter le Vnet que vous souhaitez
+3. Appliquez les modifications
+4. Ajouter le VLAN sur votre switch 
+5. Tagged ou untagged les ports que vous souhaitez utiliser avec cette Vlan
+6. Enregistrer et appliquez les modifications
+7. Sur votre Opnsense rendez vous dans Interface, périphérique et VLAN
+8. Ajoutez votre VLAN
+9. Dans interface --> Assignation, assignez cette interface
+10. Dans Parefeu --> Votre vlan, cliquez sur activer et donner une ip à votre interface qui servira de Gateway
+11. Activation du DHCP dans service--> dhcpv4 --> Votre interface
+
+
 
 # Partie 1 : Proxmox
 
