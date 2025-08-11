@@ -1,11 +1,12 @@
 # Introduction
 Dans ce document nous allons étudier et voirs les éléments suivants : 
 
-- Utilisation du VPN
-- Utilisation du Home Cinéma
-- Utilisation du Vaultwarden
+- Utilisation du VPN et connexion
+- Utilisation du Home Cinéma (Jellyfin)
+- Utilisation du Vaultwarden (Gestionnaire de mot de passe)
 - Utilisation du Cloud (Nextcloud)
 - Détails de l'installation des différents outils 
+- Conseils et astuces
 
 ### Quelques informations avant de commencer
 
@@ -24,6 +25,10 @@ Ensuite un VPN fonctionne de la manière suivante :
 
 
 # Installation du VPN
+
+Concernant l'installation du VPN sur vos appareils, il est possible de pouvoirs l'installer sur les plateformes suivantes : Mobiles (IOS, android), Linux, Windows, MacOS, ChromOS, NixOS etc...
+
+par la suite vous devrez télécharger votre fichier client que j'ai du vous fournir, le renseigner dans le 
 
 # Utilisation du VPN
 
