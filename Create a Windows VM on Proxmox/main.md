@@ -1,11 +1,9 @@
 
 # Introduction
 
-## Les virtio ? c'est quoi ? 
+# Pourquoi créer de cette manière ?
 
-## Pourquoi créer de cette manière ?
-
-
+Créer une VM de cette manière permet de mieux intégrer Windows et permet de gagner des performances. Sinon tout sera émulé et donc plus lent. 
 
 # Création de la VM
 
@@ -110,7 +108,9 @@ Une fois sur cette onglet, normalement aucun disque n'est détécter et c'est no
 \end{center}
 ```
 
-Une fois sur l'interface pour charger un driver, normalement plusieurs s'affiches, il faut choisir celui qui correspond à la version de votre windos (dans mon cas c'est un Windows 11, donc je dois prendre celui avec w11, si vous aviez voulu un Windows serveur 2022, vous auriez du séléctionner le 2K22)
+Une fois sur l'interface pour charger un driver, normalement plusieurs s'affiches, il faut choisir celui qui correspond à la version de votre windows (dans mon cas c'est un Windows 11, donc je dois prendre celui avec w11, si vous aviez voulu un Windows serveur 2022, vous auriez du séléctionner le 2K22)
+
+Il faut aller prendre le pilote dans le repertoire : `vioscsi\<version>\amd64`, puis une fois fait séléctionner le pilote RedHat et l'installer. Une fois cela fait, votre disque sera trouver et vous pourrez installer windows.
 
 ```{=latex}
 \begin{center}
@@ -123,7 +123,7 @@ Une fois sur l'interface pour charger un driver, normalement plusieurs s'affiche
 
 Puis cliquez sur suivant. 
 
-Une fois Windows installer, normalement vous pouvez voir votre disque apparaitre, cliquer sur suivant une fois votre disque séléctionner l'installation se lance. Après le redémarrage, vous aller arriver sur l'interface graphique de Windows pour installer l'OS, configurer vos paramètres. Arriver à l'étape du réseau, normalement votre carte réseau ne vas pas être détécter, pour cela il suffit de cliquer sur installer le pilote et Windows le trouvera tt seul (si cela n'est pas le cas, vous pouvez changer la carte réseau pour E100 le temps de l'installation, une fois installer repasser sur virtio et installer les pilote décrit ci-dessous). Une fois que votre windows à été installer, vous allez pouvoirs normalement vous rendre dans le lecteur avec les virtio et éxécuter les deux paquets suivants : `virtio-win-gt-x64` et `virtio-win-guest-tools`, ce dernier permet l'utilisation de l'agent qemu ! 
+Une fois Windows installer, normalement vous pouvez voir votre disque apparaitre, cliquer sur suivant une fois votre disque séléctionner l'installation se lance. Après le redémarrage, vous aller arriver sur l'interface graphique de Windows pour installer l'OS, configurer vos paramètres. Arriver à l'étape du réseau, normalement votre carte réseau ne vas pas être détécter, pour cela il suffit de cliquer sur installer le pilote et Windows le trouvera tt seul (si cela n'est pas le cas, vous pouvez changer la carte réseau pour E100 le temps de l'installation, une fois installer repasser sur virtio et installer les pilote décrit ci-dessous). Une fois que votre windows à été installer, vous allez pouvoirs normalement vous rendre dans le lecteur avec les virtio et éxécuter les deux paquets suivants : `virtio-win-gt-x64` et `virtio-win-guest-tools`, ce dernier permet l'utilisation de l'agent qemu ! Une fois installer (virtio-win-get) normalement vous allez pouvoirs avoir accès à internet etc..
 
 
 # Bonne pratique
@@ -132,6 +132,6 @@ Une fois Windows installer, normalement vous pouvez voir votre disque apparaitre
 
 <!-- Commande pour créer le document : 
 
-- pandoc Page\ de\ garde.md Sommaire.md main.md -o Rapport_Greenit_Alexandre_FA_FD_DAO.pdf --pdf-engine=xelatex -V lang=fr
+- pandoc Page\ de\ garde.md Sommaire.md main.md -o create_a_windows_vm.pdf --pdf-engine=xelatex -V lang=fr
 
 -->
